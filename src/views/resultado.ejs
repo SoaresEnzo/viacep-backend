@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src='main.js'></script>
+    <style>
+        body {
+            background-color: purple;
+        }
+
+        a.btn.bg-white {
+            color: purple;
+        }
+
+        .card-body {
+            color: white;
+            background-color: purple;
+        }
+
+        .card-body:hover {
+            color: purple;
+            background-color: white;
+        }
+
+        .jumbotron {
+            background-color: white;
+            height: 10vh;
+        }
+
+        p.lead {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="jumbotron d-flex align-items-center justify-content-center">
+        <p class="lead">Ceps encontrados:</p>
+    </div>
+    <div class="container d-flex flex-wrap">
+        <%dados.map((dado)=>{%>
+            <div class="card mt-2 mb-2 w-25">
+                <div class="card-body">
+                    <p>CEP:<%=dado.cep%>
+                    </p>
+                    <p>Rua: <%=dado.logradouro%>
+                    </p>
+                    <p>Bairro: <%=dado.bairro%>
+                    </p>
+                    <p>Cidade: <%=dado.localidade%>
+                    </p>
+                    <p>UF: <%=dado.uf%>
+                    </p>
+                </div>
+            </div>
+            <%})%>
+
+    </div>
+
+    <div class="container">
+        <a href="/" class="btn bg-white">Procurar outro endereço</a>
+    </div>
+
+</body>
+
+</html>
